@@ -1,0 +1,46 @@
+Instruction Set
+
+Movement Set
+0x10	- left		- move tape head left by 1
+0x11 x	- left x	- move tape head left by x
+0x12	- right		- move tape head right by 1
+0x13 x	- right x	- move tape head right by x
+
+Maths Set
+0x20	- incr		- increment cell
+0x21 x	- add x		- add x to cell
+0x22	- decr		- decrement cell
+0x23 x	- sub x		- subtract x from cell
+0x24	- set		- zero cell
+0x25 x	- set x		- set cell to x
+
+IO Set
+0x30	- in		- input fd 0 to cell (stdin)
+0x31 x	- in x		- input fd x to cell
+0x32	- out		- output cell to fd 1 (stdout)
+0x33 x	- out x		- output cell to fd x
+0x34	- err		- output cell to fd 2 (stderr)
+
+Jump Set
+0x40 x	- jr x		- jump relative by x
+0x41 x	- jrnx x	- jump relative if cell not zero by x
+0x42 x	- jp x		- jump absolute by x
+0x43 x	- jpnz x	- jump absolute if cell not zero to x
+
+Copy Set
+0x50	- copy		- copy next
+0x51 x	- copy x	- copy relative
+0x52	- move		- move next and zero
+0x53 x	- move x	- move relative and zero
+0x54	- swap		- swap next
+0x55 x	- swap x	- swap relative
+
+Machine Set
+0x00	- nop		- do nothing
+0x01	- halt		- halt machine
+
+Compiler:
+vmc <program.s >program.o
+
+VM:
+vm tapelength program.o
