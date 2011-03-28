@@ -28,6 +28,9 @@ void printError(int rc);
 #define iMoveX 0x53
 #define iSwap 0x54
 #define iSwapX 0x55
+#define iDiv 0x60
+#define iMult 0x61
+#define iMod 0x62
 #define iNop 0x00
 #define iHalt 0x01
 

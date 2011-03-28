@@ -198,6 +198,21 @@ int execute(int end, int length, int programCounter, int head, char* tape, char*
 				tape[head - argument] = tape[head];
 				tape[head] = temp;
 				break;
+			case iDiv:
+				head++;
+				if(head > end) return rErrorTapeRunoff;
+				tape[head] /= tape[head - 1];
+				break;
+			case iMult:
+				head++;
+				if(head > end) return rErrorTapeRunoff;
+				tape[head] *= tape[head - 1];
+				break;
+			case iMod:
+				head++;
+				if(head > end) return rErrorTapeRunoff;
+				tape[head] %= tape[head - 1];
+				break;
 			case iHalt:
 				return rOk;
 				break;

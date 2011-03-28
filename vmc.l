@@ -27,6 +27,10 @@ copy			return tCopy;
 move			return tMove;
 swap			return tSwap;
 
+div			return tDiv;
+mult			return tMult;
+mod			return tMod;
+
 halt			return tHalt;
 
 [-+]?[0-9]*		yylval=(int)strtol(yytext, NULL, 10); return tNum;

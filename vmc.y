@@ -9,7 +9,7 @@ int tmp, tval;
 
 %}
 
-%token tLeft tRight tIncr tAdd tDecr tSub tSet tIn tOut tEr tJr tJrnz tJp tJpnz tCopy tMove tSwap tNop tHalt tNum tErr
+%token tLeft tRight tIncr tAdd tDecr tSub tSet tIn tOut tEr tJr tJrnz tJp tJpnz tCopy tMove tSwap tDiv tMult tMod tNop tHalt tNum tErr
 
 %%
 
@@ -42,6 +42,9 @@ input:	tLeft			{ putchar(0x10); }
 	| tMove tNum		{ putchar(0x53); putchar($2); }
 	| tSwap			{ putchar(0x54); }
 	| tSwap tNum		{ putchar(0x55); putchar($2); }
+	| tDiv			{ putchar(0x60); }
+	| tMult			{ putchar(0x61); }
+	| tMod			{ putchar(0x62); }
 	| tNop			{ putchar(0x00); }
 	| tHalt			{ putchar(0x01); }
 	;

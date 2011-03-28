@@ -35,6 +35,11 @@ Copy Set
 0x54	- swap		- swap next
 0x55 x	- swap x	- swap relative
 
+Advanced Maths Set
+0x60	- div		- divide next
+0x61	- mult		- multiply next
+0x62	- mod		- modulo next
+
 Machine Set
 0x00	- nop		- do nothing
 0x01	- halt		- halt machine
